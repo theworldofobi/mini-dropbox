@@ -1,0 +1,254 @@
+2025-04-01 14:26:33,487 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 14:26:33,487 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 14:30:47,453 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 14:30:47,454 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 14:34:02,414 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 14:34:02,415 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 14:34:02,419 - root - INFO - logger.py:65 - (loaded config) Storage directory: uploads
+2025-04-01 14:39:30,991 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 14:39:31,433 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 14:39:31,439 - asyncio - DEBUG - selector_events.py:64 - Using selector: KqueueSelector
+2025-04-01 14:39:31,452 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 14:39:31,458 - root - INFO - logger.py:65 - Starting Dropbox-lite Demo
+2025-04-01 14:39:31,458 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 14:39:31,459 - root - INFO - logger.py:65 - Storage directory: uploads
+2025-04-01 14:39:31,459 - root - INFO - logger.py:65 - Server running on: localhost:8000
+2025-04-01 14:57:46,510 - root - INFO - logger.py:65 - Shutting down Dropbox-lite Demo
+2025-04-01 14:57:47,181 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 14:57:47,189 - asyncio - DEBUG - selector_events.py:64 - Using selector: KqueueSelector
+2025-04-01 14:57:47,202 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 14:57:47,210 - root - INFO - logger.py:65 - Starting Dropbox-lite Demo
+2025-04-01 14:57:47,210 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 14:57:47,211 - root - INFO - logger.py:65 - Storage directory: uploads
+2025-04-01 14:57:47,211 - root - INFO - logger.py:65 - Server running on: localhost:8000
+2025-04-01 15:31:50,123 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_part_begin with no data
+2025-04-01 15:31:50,128 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_field with data[42:61]
+2025-04-01 15:31:50,128 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_value with data[63:106]
+2025-04-01 15:31:50,128 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_header_end with no data
+2025-04-01 15:31:50,128 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_field with data[108:120]
+2025-04-01 15:31:50,128 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_value with data[122:137]
+2025-04-01 15:31:50,128 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_header_end with no data
+2025-04-01 15:31:50,128 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_headers_finished with no data
+2025-04-01 15:31:50,130 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_part_data with data[141:36980]
+2025-04-01 15:31:50,130 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_part_end with no data
+2025-04-01 15:31:50,130 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_end with no data
+2025-04-01 15:47:43,042 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_part_begin with no data
+2025-04-01 15:47:43,044 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_field with data[42:61]
+2025-04-01 15:47:43,044 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_value with data[63:106]
+2025-04-01 15:47:43,044 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_header_end with no data
+2025-04-01 15:47:43,044 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_field with data[108:120]
+2025-04-01 15:47:43,044 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_value with data[122:137]
+2025-04-01 15:47:43,044 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_header_end with no data
+2025-04-01 15:47:43,044 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_headers_finished with no data
+2025-04-01 15:47:43,046 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_part_data with data[141:16384]
+2025-04-01 15:47:43,047 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_part_data with data[0:20596]
+2025-04-01 15:47:43,047 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_part_end with no data
+2025-04-01 15:47:43,047 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_end with no data
+2025-04-01 15:50:52,947 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_part_begin with no data
+2025-04-01 15:50:52,949 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_field with data[42:61]
+2025-04-01 15:50:52,949 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_value with data[63:106]
+2025-04-01 15:50:52,949 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_header_end with no data
+2025-04-01 15:50:52,949 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_field with data[108:120]
+2025-04-01 15:50:52,949 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_value with data[122:137]
+2025-04-01 15:50:52,949 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_header_end with no data
+2025-04-01 15:50:52,949 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_headers_finished with no data
+2025-04-01 15:50:52,949 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_part_data with data[141:36980]
+2025-04-01 15:50:52,949 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_part_end with no data
+2025-04-01 15:50:52,949 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_end with no data
+2025-04-01 16:03:35,579 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_part_begin with no data
+2025-04-01 16:03:35,583 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_field with data[42:61]
+2025-04-01 16:03:35,583 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_value with data[63:112]
+2025-04-01 16:03:35,584 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_header_end with no data
+2025-04-01 16:03:35,584 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_field with data[114:126]
+2025-04-01 16:03:35,584 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_value with data[128:144]
+2025-04-01 16:03:35,584 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_header_end with no data
+2025-04-01 16:03:35,584 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_headers_finished with no data
+2025-04-01 16:03:35,586 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_part_data with data[148:761]
+2025-04-01 16:03:35,586 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_part_end with no data
+2025-04-01 16:03:35,586 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_end with no data
+2025-04-01 16:03:55,761 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_part_begin with no data
+2025-04-01 16:03:55,762 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_field with data[42:61]
+2025-04-01 16:03:55,762 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_value with data[63:112]
+2025-04-01 16:03:55,762 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_header_end with no data
+2025-04-01 16:03:55,762 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_field with data[114:126]
+2025-04-01 16:03:55,762 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_value with data[128:144]
+2025-04-01 16:03:55,762 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_header_end with no data
+2025-04-01 16:03:55,762 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_headers_finished with no data
+2025-04-01 16:03:55,763 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_part_data with data[148:761]
+2025-04-01 16:03:55,764 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_part_end with no data
+2025-04-01 16:03:55,764 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_end with no data
+2025-04-01 16:07:48,125 - root - INFO - logger.py:65 - Shutting down Dropbox-lite Demo
+2025-04-01 16:07:52,765 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:07:53,143 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:07:53,154 - asyncio - DEBUG - selector_events.py:64 - Using selector: KqueueSelector
+2025-04-01 16:07:53,169 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:07:53,191 - root - INFO - logger.py:65 - Starting Dropbox-lite Demo
+2025-04-01 16:07:53,191 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:07:53,191 - root - INFO - logger.py:65 - Storage directory: uploads
+2025-04-01 16:07:53,192 - root - INFO - logger.py:65 - Server running on: localhost:8000
+2025-04-01 16:09:41,322 - root - INFO - logger.py:65 - Shutting down Dropbox-lite Demo
+2025-04-01 16:09:43,395 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:09:43,789 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:09:43,799 - asyncio - DEBUG - selector_events.py:64 - Using selector: KqueueSelector
+2025-04-01 16:09:43,814 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:09:43,834 - root - INFO - logger.py:65 - Starting Dropbox-lite Demo
+2025-04-01 16:09:43,834 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:09:43,834 - root - INFO - logger.py:65 - Storage directory: uploads
+2025-04-01 16:09:43,835 - root - INFO - logger.py:65 - Server running on: localhost:8000
+2025-04-01 16:10:27,374 - root - INFO - logger.py:65 - Shutting down Dropbox-lite Demo
+2025-04-01 16:10:29,108 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:10:29,392 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:10:29,400 - asyncio - DEBUG - selector_events.py:64 - Using selector: KqueueSelector
+2025-04-01 16:10:29,418 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:10:29,427 - root - INFO - logger.py:65 - Starting Dropbox-lite Demo
+2025-04-01 16:10:29,427 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:10:29,428 - root - INFO - logger.py:65 - Storage directory: uploads
+2025-04-01 16:10:29,428 - root - INFO - logger.py:65 - Server running on: localhost:8000
+2025-04-01 16:11:52,937 - root - INFO - logger.py:65 - Shutting down Dropbox-lite Demo
+2025-04-01 16:11:54,881 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:11:55,263 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:11:55,269 - asyncio - DEBUG - selector_events.py:64 - Using selector: KqueueSelector
+2025-04-01 16:11:55,281 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:11:55,287 - root - INFO - logger.py:65 - Starting Dropbox-lite Demo
+2025-04-01 16:11:55,288 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:11:55,288 - root - INFO - logger.py:65 - Storage directory: uploads
+2025-04-01 16:11:55,288 - root - INFO - logger.py:65 - Server running on: localhost:8000
+2025-04-01 16:15:25,752 - root - INFO - logger.py:65 - Shutting down Dropbox-lite Demo
+2025-04-01 16:15:27,703 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:15:28,036 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:15:28,047 - asyncio - DEBUG - selector_events.py:64 - Using selector: KqueueSelector
+2025-04-01 16:15:28,064 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:15:28,073 - root - INFO - logger.py:65 - Starting Dropbox-lite Demo
+2025-04-01 16:15:28,073 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:15:28,074 - root - INFO - logger.py:65 - Storage directory: uploads
+2025-04-01 16:15:28,074 - root - INFO - logger.py:65 - Server running on: localhost:8000
+2025-04-01 16:18:00,213 - root - INFO - logger.py:65 - Shutting down Dropbox-lite Demo
+2025-04-01 16:18:01,988 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:18:02,343 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:18:02,352 - asyncio - DEBUG - selector_events.py:64 - Using selector: KqueueSelector
+2025-04-01 16:18:02,367 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:18:02,377 - root - INFO - logger.py:65 - Starting Dropbox-lite Demo
+2025-04-01 16:18:02,377 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:18:02,377 - root - INFO - logger.py:65 - Storage directory: uploads
+2025-04-01 16:18:02,377 - root - INFO - logger.py:65 - Server running on: localhost:8000
+2025-04-01 16:18:19,483 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_part_begin with no data
+2025-04-01 16:18:19,483 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_field with data[42:61]
+2025-04-01 16:18:19,483 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_value with data[63:112]
+2025-04-01 16:18:19,483 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_header_end with no data
+2025-04-01 16:18:19,484 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_field with data[114:126]
+2025-04-01 16:18:19,484 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_value with data[128:144]
+2025-04-01 16:18:19,484 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_header_end with no data
+2025-04-01 16:18:19,484 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_headers_finished with no data
+2025-04-01 16:18:19,486 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_part_data with data[148:761]
+2025-04-01 16:18:19,486 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_part_end with no data
+2025-04-01 16:18:19,487 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_end with no data
+2025-04-01 16:23:47,885 - root - INFO - logger.py:65 - Shutting down Dropbox-lite Demo
+2025-04-01 16:23:50,291 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:23:50,661 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:23:50,671 - asyncio - DEBUG - selector_events.py:64 - Using selector: KqueueSelector
+2025-04-01 16:23:50,688 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:23:50,698 - root - INFO - logger.py:65 - Starting Dropbox-lite Demo
+2025-04-01 16:23:50,698 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:23:50,698 - root - INFO - logger.py:65 - Storage directory: uploads
+2025-04-01 16:23:50,698 - root - INFO - logger.py:65 - Server running on: localhost:8000
+2025-04-01 16:23:55,121 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_part_begin with no data
+2025-04-01 16:23:55,122 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_field with data[42:61]
+2025-04-01 16:23:55,122 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_value with data[63:106]
+2025-04-01 16:23:55,123 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_header_end with no data
+2025-04-01 16:23:55,123 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_field with data[108:120]
+2025-04-01 16:23:55,123 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_value with data[122:137]
+2025-04-01 16:23:55,123 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_header_end with no data
+2025-04-01 16:23:55,123 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_headers_finished with no data
+2025-04-01 16:23:55,124 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_part_data with data[141:36980]
+2025-04-01 16:23:55,124 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_part_end with no data
+2025-04-01 16:23:55,124 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_end with no data
+2025-04-01 16:29:41,068 - root - INFO - logger.py:65 - Shutting down Dropbox-lite Demo
+2025-04-01 16:29:43,806 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:29:44,173 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:29:44,183 - asyncio - DEBUG - selector_events.py:64 - Using selector: KqueueSelector
+2025-04-01 16:29:44,195 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:29:44,201 - root - INFO - logger.py:65 - Starting Dropbox-lite Demo
+2025-04-01 16:29:44,201 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:29:44,201 - root - INFO - logger.py:65 - Storage directory: uploads
+2025-04-01 16:29:44,201 - root - INFO - logger.py:65 - Server running on: localhost:8000
+2025-04-01 16:29:54,821 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_part_begin with no data
+2025-04-01 16:29:54,821 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_field with data[42:61]
+2025-04-01 16:29:54,822 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_value with data[63:112]
+2025-04-01 16:29:54,822 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_header_end with no data
+2025-04-01 16:29:54,822 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_field with data[114:126]
+2025-04-01 16:29:54,822 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_value with data[128:144]
+2025-04-01 16:29:54,822 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_header_end with no data
+2025-04-01 16:29:54,823 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_headers_finished with no data
+2025-04-01 16:29:54,823 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_part_data with data[148:761]
+2025-04-01 16:29:54,823 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_part_end with no data
+2025-04-01 16:29:54,823 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_end with no data
+2025-04-01 16:37:10,888 - root - INFO - logger.py:65 - Shutting down Dropbox-lite Demo
+2025-04-01 16:37:13,488 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:37:13,797 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:37:13,808 - asyncio - DEBUG - selector_events.py:64 - Using selector: KqueueSelector
+2025-04-01 16:37:13,834 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:37:13,845 - root - INFO - logger.py:65 - Starting Dropbox-lite Demo
+2025-04-01 16:37:13,845 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:37:13,845 - root - INFO - logger.py:65 - Storage directory: uploads
+2025-04-01 16:37:13,845 - root - INFO - logger.py:65 - Server running on: localhost:8000
+2025-04-01 16:37:27,565 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_part_begin with no data
+2025-04-01 16:37:27,566 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_field with data[42:61]
+2025-04-01 16:37:27,566 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_value with data[63:112]
+2025-04-01 16:37:27,566 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_header_end with no data
+2025-04-01 16:37:27,566 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_field with data[114:126]
+2025-04-01 16:37:27,566 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_value with data[128:144]
+2025-04-01 16:37:27,566 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_header_end with no data
+2025-04-01 16:37:27,566 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_headers_finished with no data
+2025-04-01 16:37:27,567 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_part_data with data[148:761]
+2025-04-01 16:37:27,567 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_part_end with no data
+2025-04-01 16:37:27,567 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_end with no data
+2025-04-01 16:43:18,745 - root - INFO - logger.py:65 - Shutting down Dropbox-lite Demo
+2025-04-01 16:46:07,573 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:46:07,916 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:46:07,924 - asyncio - DEBUG - selector_events.py:64 - Using selector: KqueueSelector
+2025-04-01 16:46:07,941 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:46:07,962 - root - INFO - logger.py:65 - Starting Dropbox-lite Demo
+2025-04-01 16:46:07,962 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 16:46:07,962 - root - INFO - logger.py:65 - Storage directory: uploads
+2025-04-01 16:46:07,962 - root - INFO - logger.py:65 - Server running on: localhost:8000
+2025-04-01 16:54:31,328 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_part_begin with no data
+2025-04-01 16:54:31,338 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_field with data[42:61]
+2025-04-01 16:54:31,339 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_value with data[63:106]
+2025-04-01 16:54:31,339 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_header_end with no data
+2025-04-01 16:54:31,343 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_field with data[108:120]
+2025-04-01 16:54:31,344 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_value with data[122:137]
+2025-04-01 16:54:31,344 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_header_end with no data
+2025-04-01 16:54:31,344 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_headers_finished with no data
+2025-04-01 16:54:31,361 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_part_data with data[141:16384]
+2025-04-01 16:54:31,369 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_part_data with data[0:20596]
+2025-04-01 16:54:31,371 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_part_end with no data
+2025-04-01 16:54:31,371 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_end with no data
+2025-04-01 17:53:33,357 - root - INFO - logger.py:65 - Shutting down Dropbox-lite Demo
+2025-04-01 17:53:35,283 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 17:53:35,559 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 17:53:35,566 - asyncio - DEBUG - selector_events.py:64 - Using selector: KqueueSelector
+2025-04-01 17:53:35,579 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 17:53:35,584 - root - INFO - logger.py:65 - Starting Dropbox-lite Demo
+2025-04-01 17:53:35,584 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 17:53:35,585 - root - INFO - logger.py:65 - Storage directory: uploads
+2025-04-01 17:53:35,585 - root - INFO - logger.py:65 - Server running on: localhost:8000
+2025-04-01 17:56:29,105 - root - INFO - logger.py:65 - Shutting down Dropbox-lite Demo
+2025-04-01 17:56:31,552 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 17:56:31,831 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 17:56:31,838 - asyncio - DEBUG - selector_events.py:64 - Using selector: KqueueSelector
+2025-04-01 17:56:31,850 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 17:56:31,855 - root - INFO - logger.py:65 - Starting Dropbox-lite Demo
+2025-04-01 17:56:31,856 - mini_dropbox.config - INFO - config.py:51 - Configuration loaded successfully
+2025-04-01 17:56:31,856 - root - INFO - logger.py:65 - Storage directory: uploads
+2025-04-01 17:56:31,856 - root - INFO - logger.py:65 - Server running on: localhost:8000
+2025-04-01 19:49:11,650 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_part_begin with no data
+2025-04-01 19:49:11,655 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_field with data[42:61]
+2025-04-01 19:49:11,656 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_value with data[63:112]
+2025-04-01 19:49:11,656 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_header_end with no data
+2025-04-01 19:49:11,657 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_field with data[114:126]
+2025-04-01 19:49:11,657 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_header_value with data[128:144]
+2025-04-01 19:49:11,657 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_header_end with no data
+2025-04-01 19:49:11,658 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_headers_finished with no data
+2025-04-01 19:49:11,661 - python_multipart.multipart - DEBUG - multipart.py:625 - Calling on_part_data with data[148:761]
+2025-04-01 19:49:11,661 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_part_end with no data
+2025-04-01 19:49:11,661 - python_multipart.multipart - DEBUG - multipart.py:628 - Calling on_end with no data

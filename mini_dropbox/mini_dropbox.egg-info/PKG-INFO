@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: mini_dropbox
+Version: 0.1
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: python-multipart
+Requires-Dist: python-jose[cryptography]
+Requires-Dist: passlib[bcrypt]
+Requires-Dist: pyyaml
+Dynamic: requires-dist

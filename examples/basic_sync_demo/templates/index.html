@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropbox-lite Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .upload-section {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .file-list {
+            margin-top: 20px;
+        }
+        .file-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dropbox-lite Demo</h1>
+    
+    <div class="upload-section">
+        <h2>Upload File</h2>
+        <form id="uploadForm">
+            <input type="file" id="fileInput" name="file">
+            <button type="submit">Upload</button>
+        </form>
+        <div id="uploadStatus"></div>
+    </div>
+
+    <div class="file-list">
+        <h2>Uploaded Files</h2>
+        <div id="fileList"></div>
+    </div>
+
+    <script>
+        // Handle file upload
+        document.getElementById('uploadForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const formData = new FormData();
+            const fileInput = document.getElementById('fileInput');
+            formData.append('file', fileInput.files[0]);
+
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                document.getElementById('uploadStatus').textContent = result.message;
+                updateFileList();
+            } catch (error) {
+                document.getElementById('uploadStatus').textContent = 'Upload failed: ' + error;
+            }
+        };
+
+        // Update file list
+        async function updateFileList() {
+            try {
+                const response = await fetch('/files');
+                const data = await response.json();
+                const fileList = document.getElementById('fileList');
+                fileList.innerHTML = data.files
+                    .map(file => `<div class="file-item">${file}</div>`)
+                    .join('');
+            } catch (error) {
+                console.error('Error fetching file list:', error);
+            }
+        }
+
+        // Initial file list load
+        updateFileList();
+    </script>
+</body>
+</html> 
