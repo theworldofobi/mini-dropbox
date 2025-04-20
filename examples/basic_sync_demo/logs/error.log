@@ -1,0 +1,24 @@
+2025-04-03 12:29:11,154 - root - ERROR - logger.py:74 - Failed to create demo application: name 'auth_controller' is not defined
+Traceback (most recent call last):
+  File "/Users/suhaaskatikaneni/Documents/personal-projects/minicode/mini-dropbox-solution/examples/basic_sync_demo/demo_app.py", line 77, in create_demo_app
+    app.include_router(auth_controller.router)
+                       ^^^^^^^^^^^^^^^
+NameError: name 'auth_controller' is not defined
+2025-04-03 12:29:11,155 - root - ERROR - logger.py:74 - Failed to run demo: name 'auth_controller' is not defined
+Traceback (most recent call last):
+  File "/Users/suhaaskatikaneni/Documents/personal-projects/minicode/mini-dropbox-solution/examples/basic_sync_demo/demo_app.py", line 100, in run_demo
+    app = create_demo_app()
+  File "/Users/suhaaskatikaneni/Documents/personal-projects/minicode/mini-dropbox-solution/examples/basic_sync_demo/demo_app.py", line 77, in create_demo_app
+    app.include_router(auth_controller.router)
+                       ^^^^^^^^^^^^^^^
+NameError: name 'auth_controller' is not defined
+2025-04-03 13:25:36,341 - mini_dropbox.auth.auth_service - ERROR - auth_service.py:99 - Token decode failed: Not enough segments
+2025-04-03 13:25:36,341 - mini_dropbox.auth.auth_service - ERROR - auth_service.py:126 - JWT validation failed: Not enough segments
+2025-04-03 13:25:36,347 - mini_dropbox.auth.auth_service - ERROR - auth_service.py:99 - Token decode failed: Not enough segments
+2025-04-03 13:25:36,348 - mini_dropbox.auth.auth_service - ERROR - auth_service.py:126 - JWT validation failed: Not enough segments
+2025-04-03 13:27:34,015 - mini_dropbox.auth.auth_service - ERROR - auth_service.py:99 - Token decode failed: Not enough segments
+2025-04-03 13:27:34,015 - mini_dropbox.auth.auth_service - ERROR - auth_service.py:126 - JWT validation failed: Not enough segments
+2025-04-03 13:27:34,018 - mini_dropbox.auth.auth_service - ERROR - auth_service.py:99 - Token decode failed: Not enough segments
+2025-04-03 13:27:34,018 - mini_dropbox.auth.auth_service - ERROR - auth_service.py:126 - JWT validation failed: Not enough segments
+2025-04-03 13:42:02,829 - mini_dropbox.files.file_service - ERROR - file_service.py:92 - Failed to fetch file: 'storage_path'
+2025-04-03 13:42:02,830 - mini_dropbox.files.file_controller - ERROR - file_controller.py:72 - Error downloading file: Failed to fetch file: 'storage_path'
