@@ -1,51 +1,71 @@
-from typing import Optional
-from flask import Flask, jsonify
+from fastapi import FastAPI
+import uvicorn
+import logging
+from config import load_config
+from auth.auth_controller import router as auth_router
+from files.file_controller import router as file_router
+from sync.sync_controller import router as sync_router
+from sharing.share_controller import router as share_router
+import os
+from contextlib import asynccontextmanager
 
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
-def create_app() -> Flask:
-    """
-    Configures and returns the Flask application.
+# Add this lifespan context manager
+@asynccontextmanager
+async def lifespan(app):
+    logger.info("Starting Dropbox-lite service")
+    # Initialize storage directory
+    config = load_config()
+    storage_path = config["STORAGE_PATH"]
+    os.makedirs(storage_path, exist_ok=True)
+    yield
+    # Shutdown logic (if any)
 
-    Returns:
-        Flask: A configured Flask application instance.
-
-    Raises:
-        RuntimeError: If the application fails to initialize.
-    """
+def create_app() -> FastAPI:
+    """Creates and configures the FastAPI application."""
     try:
-        app = Flask(__name__)
-        # TODO: Add any additional configuration or initialization here
-
-        @app.route("/health", methods=["GET"])
-        def health_check() -> str:
-            """
-            Health check endpoint to ensure the server is running.
-
-            Returns:
-                str: A simple JSON response indicating health status.
-            """
-            return jsonify({"status": "OK"})
-
+        # Load configuration
+        config = load_config()
+        
+        # Create FastAPI app
+        app = FastAPI(
+            title="Dropbox-lite API",
+            description="A lightweight file storage and sharing service",
+            version="1.0.0",
+            lifespan=lifespan
+        )
+        
+        # Register routers
+        app.include_router(auth_router)
+        app.include_router(file_router)
+        app.include_router(sync_router)
+        app.include_router(share_router)
+        
         return app
+        
     except Exception as e:
-        # Handle errors in application creation
-        raise RuntimeError(f"Failed to create Flask application: {e}")
+        logger.error("Failed to create application: %s", str(e))
+        raise
 
-
-def run_app(port: int = 5000) -> None:
-    """
-    Starts the server on the specified port.
-
-    Args:
-        port: The port number on which to run the Flask server.
-
-    Raises:
-        RuntimeError: If the server fails to start.
-    """
-    app = create_app()
+def run_app(host=None, port=None, log_level=None, reload=None):
+    """Runs the FastAPI application."""
     try:
-        # TODO: Optionally configure advanced servers like Gunicorn or Twisted
-        app.run(host="0.0.0.0", port=port)
+        config = load_config()
+        app = create_app()
+        
+        uvicorn.run(
+            app,
+            host=host or config["HOST"],
+            port=port or config["PORT"],
+            log_level=log_level or config["LOG_LEVEL"].lower(),
+            reload=reload if reload is not None else config["DEBUG"]
+        )
     except Exception as e:
-        # Handle errors during server startup
-        raise RuntimeError(f"Failed to start Flask server: {e}")
+        logger.error("Failed to run application: %s", str(e))
+        raise
+
+if __name__ == "__main__":
+    run_app()

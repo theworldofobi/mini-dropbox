@@ -1,44 +1,36 @@
 from typing import Any, Dict
 import logging
+from fastapi import APIRouter, Depends, HTTPException, status
+from auth.auth_service import get_current_user
+from . import sync_service
+from datetime import datetime
 
+router = APIRouter(prefix="/sync", tags=["Sync"])
 logger = logging.getLogger(__name__)
 
-def init_sync_endpoint(request: Any) -> Dict[str, Any]:
-    """
-    Called when a client starts syncing; returns changed files since last sync.
-    
-    Args:
-        request: The request object containing sync details
-    
-    Returns:
-        Dict[str, Any]: Dictionary containing changed files or error information
-    """
-    # TODO: Implement logic to determine which files have changed
-    # TODO: Retrieve last sync info from request
-    # TODO: Query database or file system for changes
-    try:
-        changed_files = []  # Placeholder
-        return {"changed_files": changed_files}
-    except Exception as e:
-        logger.error(f"Error in init_sync_endpoint: {str(e)}")
-        return {"error": "Unable to retrieve changed files"}
+@router.post("/init")
+async def init_sync_endpoint(
+    last_sync_ts: float,
+    current_user: Dict[str, Any] = Depends(get_current_user)
+) -> Dict[str, Any]:
+    """Initializes sync and returns changed files."""
+    # TODO: Implement sync initialization
+    # 1. Call sync_service.get_updated_files with user_id and last_sync_ts
+    # 2. Return changed_files with current UTC timestamp
+    # 3. Handle ValueError with 400 BAD_REQUEST
+    # 4. Handle other exceptions with 500 INTERNAL_SERVER_ERROR
+    pass
 
-def resolve_conflict_endpoint(request: Any) -> Dict[str, Any]:
-    """
-    Allows a user to pick a version if there's a conflict.
-    
-    Args:
-        request: The request object providing conflict details and user selection
-    
-    Returns:
-        Dict[str, Any]: Dictionary indicating success or error information
-    """
-    # TODO: Implement conflict resolution logic
-    # TODO: Validate chosen version from request
-    # TODO: Merge or override file data based on selection
-    try:
-        resolution_result = "Conflict resolved"  # Placeholder
-        return {"status": resolution_result}
-    except Exception as e:
-        logger.error(f"Error in resolve_conflict_endpoint: {str(e)}")
-        return {"error": "Unable to resolve conflict"}
+@router.post("/resolve")
+async def resolve_conflict_endpoint(
+    local_version: Dict[str, Any],
+    remote_version: Dict[str, Any],
+    current_user: Dict[str, Any] = Depends(get_current_user)
+) -> Dict[str, Any]:
+    """Resolves conflicts between file versions."""
+    # TODO: Implement conflict resolution
+    # 1. Call sync_service.detect_conflicts with local_version and remote_version
+    # 2. Return resolved_version with current UTC timestamp
+    # 3. Handle ValueError with 400 BAD_REQUEST
+    # 4. Handle other exceptions with 500 INTERNAL_SERVER_ERROR
+    pass

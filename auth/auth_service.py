@@ -1,71 +1,88 @@
-from typing import Any, Dict
+from typing import Any, Dict, Optional
+from datetime import datetime, timedelta, timezone
+import logging
 import bcrypt
+import jwt as pyjwt
 
-# TODO: Replace with real database interactions
-# For demonstration only, this will act as an in-memory store
-_mock_db: Dict[str, Dict[str, Any]] = {}
+from fastapi import HTTPException, status, Depends
+from fastapi.security import OAuth2PasswordBearer
 
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/login")
+
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Configuration
+SECRET_KEY = "your-secure-secret-key"  # In production, use environment variable
+ALGORITHM = "HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES = 30
+
+# Mock user database
+MOCK_USERS = {
+    "suhaas": {
+        "id": "1",
+        "username": "suhaas",
+        "password": "123"  # In production, use hashed passwords
+    },
+    "guest": {
+        "id": "2",
+        "username": "guest",
+        "password": None
+    }
+}
 
 def create_user(username: str, password: str) -> Dict[str, Any]:
-    """
-    Inserts a new user record with a hashed password.
-
-    Args:
-        username: The desired username.
-        password: The raw password to be hashed and stored.
-
-    Returns:
-        A dictionary containing user information.
-
-    Raises:
-        ValueError: If the username already exists.
-        Exception: If an unexpected error occurs.
-    """
-    if username in _mock_db:
-        raise ValueError("Username already exists.")
-
-    try:
-        # Hash the password
-        salt = bcrypt.gensalt()
-        hashed_password = bcrypt.hashpw(password.encode('utf-8'), salt)
-
-        # Save user to mock DB
-        _mock_db[username] = {
-            "username": username,
-            "password": hashed_password,
-            "id": len(_mock_db)  # TODO: Replace with real ID from database
-        }
-        return {"username": username, "id": _mock_db[username]["id"]}
-    except Exception as e:
-        # TODO: Add proper logging
-        raise Exception("Failed to create user.") from e
-
+    """Creates a new user with hashed password."""
+    # TODO: Implement user creation functionality
+    # 1. Check if username already exists in MOCK_USERS, raise ValueError if it does
+    # 2. Hash the password using bcrypt
+    # 3. Create a user record with id, username, hashed password, and creation timestamp
+    # 4. Add the user to MOCK_USERS dictionary
+    # 5. Log successful user creation
+    # 6. Return user info (username and id)
+    # 7. Handle exceptions appropriately
+    pass
 
 def verify_user(username: str, password: str) -> Dict[str, Any]:
-    """
-    Checks the provided credentials against the database and returns user data if correct.
+    """Verifies user credentials."""
+    # TODO: Implement user verification functionality
+    # 1. Check if username exists in MOCK_USERS, raise 401 if not found
+    # 2. For guest user, skip password check
+    # 3. For regular users, verify password matches
+    # 4. Return user data if credentials are valid
+    # 5. Raise 401 UNAUTHORIZED for invalid credentials
+    pass
 
-    Args:
-        username: The username to verify.
-        password: The raw password to check.
+def create_access_token(data: Dict[str, Any]) -> str:
+    """Creates JWT token with expiry."""
+    # TODO: Implement token creation
+    # 1. Create a copy of the data dictionary
+    # 2. Calculate expiration time using ACCESS_TOKEN_EXPIRE_MINUTES
+    # 3. Add expiration to token data
+    # 4. Encode and return JWT token using SECRET_KEY and ALGORITHM
+    pass
 
-    Returns:
-        A dictionary containing user information if the credentials are correct.
+def verify_token(token: str) -> Dict[str, Any]:
+    """Verifies JWT token and returns user data."""
+    # TODO: Implement token verification
+    # 1. Try to decode the token using SECRET_KEY and ALGORITHM
+    # 2. Extract username ("sub") from payload
+    # 3. Validate that username exists and is in MOCK_USERS
+    # 4. Return user data if token is valid
+    # 5. Handle exceptions with appropriate HTTP errors
+    pass
 
-    Raises:
-        ValueError: If the username does not exist or the password is incorrect.
-        Exception: If an unexpected error occurs.
-    """
-    if username not in _mock_db:
-        raise ValueError("User does not exist.")
+# def get_current_user(token: str) -> Dict[str, Any]:
+#     """Dependency for protected endpoints."""
+#     print("Checking auth token:", token[:10] if token else None)  # Debug print
+#     if not token:
+#         raise HTTPException(
+#             status_code=status.HTTP_401_UNAUTHORIZED,
+#             detail="Not authenticated"
+#         )
+#     return verify_token(token.replace("Bearer ", ""))
 
-    try:
-        stored_user = _mock_db[username]
-        stored_hashed_password = stored_user["password"]
-        if bcrypt.checkpw(password.encode('utf-8'), stored_hashed_password):
-            return {"username": stored_user["username"], "id": stored_user["id"]}
-        else:
-            raise ValueError("Invalid password.")
-    except Exception as e:
-        # TODO: Add proper logging
-        raise Exception("Failed to verify user.") from e
+def get_current_user(token: str = Depends(oauth2_scheme)) -> Dict[str, Any]:
+    return verify_token(token)

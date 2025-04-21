@@ -1,53 +1,74 @@
-from typing import Dict, Any
+from typing import Dict, Any, List
+from fastapi import APIRouter, Depends, HTTPException, status
+from pydantic import BaseModel
+from auth.auth_service import get_current_user
+from . import share_service
 
+router = APIRouter(prefix="/share", tags=["Sharing"])
 
-def create_share_link_endpoint(file_id: str) -> Dict[str, Any]:
-    """
-    Generates a share link for a file/folder.
+# Replace type alias with Pydantic models
+class ShareLinkResponse(BaseModel):
+    """Response model for share link creation."""
+    message: str
+    share_url: str
+    expires_at: str
+    permission_level: str
 
-    Args:
-        file_id (str): The unique identifier of the file or folder.
+class ShareAccessResponse(BaseModel):
+    """Response model for share access."""
+    file_id: str
+    permission_level: str
+    expires_at: str
 
-    Returns:
-        Dict[str, Any]: A dictionary containing information about the newly created share link.
-    """
-    # TODO: Implement logic to generate a share link for the given file/folder.
-    #       1. Validate the file_id (check if file/folder exists).
-    #       2. Generate a unique share link (e.g., using a UUID or hashing).
-    #       3. Store the share link data in a persistent storage (database, etc.).
-    # Return a sample response for demonstration purposes.
-    try:
-        # Example placeholder logic
-        share_link_data = {
-            "share_id": "generated_share_id",
-            "share_link": "https://example.com/share/generated_share_id",
-            "file_id": file_id
-        }
-        return share_link_data
-    except Exception as error:
-        # Log the error or handle it accordingly
-        raise ValueError(f"Failed to create share link: {error}") from error
+class ShareListResponse(BaseModel):
+    """Response model for share listing."""
+    shares: List[Dict[str, Any]]
+    total: int
 
+@router.post("/{file_id}", response_model=ShareLinkResponse)
+async def create_share_link_endpoint(
+    file_id: str,
+    permission: str = share_service.SharePermission.READ,
+    expires_in_days: int = 7,
+    current_user: Dict[str, Any] = Depends(get_current_user)
+) -> Dict[str, Any]:
+    """Creates a share link for a file."""
+    # TODO: Implement share link creation
+    # 1. Call share_service.create_share_link with user_id, file_id, permission_level, and expires_in_days
+    # 2. Return response with message, share_url, expires_at, and permission_level
+    # 3. Handle exceptions with 500 INTERNAL_SERVER_ERROR
+    pass
 
-def revoke_share_link_endpoint(share_id: str) -> None:
-    """
-    Cancels an existing share link.
+@router.get("/access/{token}", response_model=ShareAccessResponse)
+async def access_shared_file(token: str) -> Dict[str, Any]:
+    """Accesses a shared file using a token."""
+    # TODO: Implement shared file access
+    # 1. Call share_service.validate_share_token with token
+    # 2. Return file_id, permission_level, and expires_at
+    # 3. Handle ValueError with 400 BAD_REQUEST
+    # 4. Handle other exceptions with 500 INTERNAL_SERVER_ERROR
+    pass
 
-    Args:
-        share_id (str): The share link identifier to revoke.
+@router.delete("/{token}")
+async def revoke_share_link_endpoint(
+    token: str,
+    current_user: Dict[str, Any] = Depends(get_current_user)
+) -> ShareLinkResponse:
+    """Revokes a share link."""
+    # TODO: Implement share link revocation
+    # 1. Call share_service.revoke_share_link with token and user_id
+    # 2. Return success message
+    # 3. Handle ValueError with 400 BAD_REQUEST
+    # 4. Handle other exceptions with 500 INTERNAL_SERVER_ERROR
+    pass
 
-    Returns:
-        None
-    """
-    # TODO: Implement revocation logic.
-    #       1. Validate the share_id (ensure it exists).
-    #       2. Update the record in persistent storage to mark it as revoked or remove it.
-    #       3. Handle any errors or exceptions that might occur.
-    try:
-        # Example placeholder logic
-        if not share_id:
-            raise ValueError("Invalid share_id provided.")
-        # Assume successful revocation
-    except Exception as error:
-        # Log the error or handle it accordingly
-        raise ValueError(f"Failed to revoke share link: {error}") from error
+@router.get("/list", response_model=ShareListResponse)
+async def list_shares_endpoint(
+    current_user: Dict[str, Any] = Depends(get_current_user)
+) -> Dict[str, Any]:
+    """Lists all active shares for the current user."""
+    # TODO: Implement share listing
+    # 1. Call share_service.list_user_shares with user_id
+    # 2. Return list of shares with total count
+    # 3. Handle exceptions with 500 INTERNAL_SERVER_ERROR
+    pass

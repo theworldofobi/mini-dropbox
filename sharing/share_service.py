@@ -1,71 +1,57 @@
-from typing import Dict, Optional
-
+from typing import Dict, Optional, List
+import logging
 import secrets
+from datetime import datetime, timedelta
 
-# In-memory store for share tokens (for demonstration purposes only).
-# Format:
-# {
-#     "token_value": {
-#         "user_id": str,
-#         "file_id": str,
-#         "permission_level": str,
-#         "is_valid": bool
-#     }
-# }
-share_tokens: Dict[str, Dict[str, str]] = {}
+logger = logging.getLogger(__name__)
 
+# Mock database for share tokens
+share_tokens: Dict[str, Dict[str, any]] = {}
 
-def create_share_link(user_id: str, file_id: str, permission_level: str) -> str:
-    """
-    Creates a unique share link or token for the given user and file with the specified permission level.
+class SharePermission:
+    READ = "read"
+    WRITE = "write"
+    NONE = "none"
 
-    Args:
-        user_id: The ID of the user who is creating the share link.
-        file_id: The ID of the file that is being shared.
-        permission_level: The level of permission granted to whoever uses this link.
+def create_share_link(user_id: str, file_id: str, permission_level: str = SharePermission.READ, 
+                     expires_in_days: int = 7) -> Dict[str, any]:
+    """Creates a unique share link with expiration."""
+    # TODO: Implement share link creation
+    # 1. Generate a secure random token using secrets.token_urlsafe
+    # 2. Calculate expiration date based on expires_in_days
+    # 3. Create a share record with token, user_id, file_id, permission_level, validity, timestamps, etc.
+    # 4. Store the share record in share_tokens dictionary
+    # 5. Log share link creation
+    # 6. Return the share data
+    # 7. Handle exceptions appropriately
+    pass
 
-    Returns:
-        A newly generated token that can be shared to provide access.
-    """
-    # TODO: Replace in-memory storage with a robust database solution for production.
-    # Generate a secure random token
-    token = secrets.token_urlsafe(16)
-    share_tokens[token] = {
-        "user_id": user_id,
-        "file_id": file_id,
-        "permission_level": permission_level,
-        "is_valid": True
-    }
-    return token
+def validate_share_token(token: str) -> Dict[str, any]:
+    """Validates token and returns associated file data."""
+    # TODO: Implement share token validation
+    # 1. Check if token exists in share_tokens
+    # 2. Verify token is still valid (not revoked)
+    # 3. Check if token has expired
+    # 4. Update access count
+    # 5. Return share data if valid
+    # 6. Handle exceptions and raise appropriate errors
+    pass
 
+def revoke_share_link(token: str, user_id: str) -> None:
+    """Revokes a share link."""
+    # TODO: Implement share link revocation
+    # 1. Check if token exists in share_tokens
+    # 2. Verify the user has permission to revoke (owner check)
+    # 3. Mark the share as invalid
+    # 4. Log revocation
+    # 5. Handle exceptions appropriately
+    pass
 
-def validate_share_token(token: str) -> Dict[str, Optional[str]]:
-    """
-    Checks if a token is valid and returns associated file or an error.
-
-    Args:
-        token: The share token to validate.
-
-    Returns:
-        A dictionary containing the file_id, user_id, and permission_level if the token is valid,
-        or an error message if the token is invalid.
-
-    Raises:
-        ValueError: If the token does not exist or is marked invalid.
-    """
-    # Check if the token exists
-    if token not in share_tokens:
-        raise ValueError("Share token does not exist.")
-
-    token_data = share_tokens[token]
-
-    # Check if the token is still valid
-    if not token_data.get("is_valid"):
-        raise ValueError("Share token is invalid.")
-
-    # TODO: Add additional validation checks, such as expiration or revoked status.
-    return {
-        "file_id": token_data["file_id"],
-        "user_id": token_data["user_id"],
-        "permission_level": token_data["permission_level"]
-    }
+def list_user_shares(user_id: str) -> List[Dict[str, any]]:
+    """Lists all active shares for a user."""
+    # TODO: Implement user shares listing
+    # 1. Filter share_tokens to find shares created by the user that are still valid
+    # 2. Sort shares by creation date (newest first)
+    # 3. Return the list of shares
+    # 4. Handle exceptions appropriately
+    pass
