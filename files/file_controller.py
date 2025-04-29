@@ -15,27 +15,12 @@ async def upload_file_endpoint(
     current_user: Dict[str, Any] = Depends(get_current_user)
 ) -> Dict[str, Any]:
     """Handles file upload requests."""
-    print("Received file:", upload_file.filename)
-    try:
-        # Add await here
-        file_metadata = await file_service.store_file(
-            user_id=str(current_user["id"]),
-            file_obj=upload_file,
-            folder_id=folder_id
-        )
-        
-        logger.info("File uploaded successfully: %s", file_metadata["file_id"])
-        return {
-            "message": "File uploaded successfully",
-            "file_id": file_metadata["file_id"]
-        }
-
-    except Exception as error:
-        print("Upload error:", str(error))
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=str(error)
-        )
+    # TODO: Implement file upload functionality
+    # 1. Call store_file from file_service to store the file with user_id and folder_id
+    # 2. Log successful upload with file_id
+    # 3. Return success message with file_id
+    # 4. Handle exceptions with 500 INTERNAL_SERVER_ERROR
+    pass
 
 @router.get("/download/{file_id}")
 async def download_file_endpoint(
@@ -43,40 +28,13 @@ async def download_file_endpoint(
     current_user: Dict[str, Any] = Depends(get_current_user)
 ) -> StreamingResponse:
     """Returns file data to the client."""
-    try:
-        file_data = file_service.fetch_file(file_id)
-        
-        # Verify user has access to this file
-        if str(current_user["id"]) != str(file_data["metadata"]["user_id"]):
-            raise HTTPException(
-                status_code=status.HTTP_403_FORBIDDEN,
-                detail="Access denied"
-            )
-
-        # Return file as streaming response
-        return StreamingResponse(
-            iter([file_data["file_bytes"]]),
-            media_type="application/octet-stream",
-            headers={
-                "Content-Disposition": f"attachment; filename={file_data['metadata']['original_name']}"
-            }
-        )
-
-    except FileNotFoundError:
-        logger.warning("File not found: %s", file_id)
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="File not found"
-        )
-    except Exception as error:
-        logger.error("Error downloading file: %s", str(error))
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Failed to download file"
-        )
-
-
-
+    # TODO: Implement file download functionality
+    # 1. Fetch file data using file_service.fetch_file with file_id
+    # 2. Verify user has access to this file by checking user_id
+    # 3. Return file as StreamingResponse with proper Content-Disposition header
+    # 4. Handle FileNotFoundError with 404 NOT_FOUND
+    # 5. Handle other exceptions with 500 INTERNAL_SERVER_ERROR
+    pass
 
 @router.get("/list")
 async def list_files_endpoint(
@@ -84,22 +42,8 @@ async def list_files_endpoint(
     folder_id: str = None
 ) -> Dict[str, Any]:
     """Lists files for the authenticated user."""
-    print("Getting list of files...")
-    print("User:", current_user)
-    try:
-        files = file_service.list_user_files(
-            user_id=str(current_user["id"]),
-            folder_id=folder_id
-        )
-        
-        return {
-            "files": files,
-            "total": len(files)
-        }
-
-    except Exception as error:
-        logger.error("Error listing files: %s", str(error))
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Failed to list files"
-        )
+    # TODO: Implement file listing functionality 
+    # 1. Call file_service.list_user_files with user_id and folder_id
+    # 2. Return list of files with total count
+    # 3. Handle exceptions with 500 INTERNAL_SERVER_ERROR
+    pass

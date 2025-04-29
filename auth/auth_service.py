@@ -35,93 +35,44 @@ MOCK_USERS = {
 
 def create_user(username: str, password: str) -> Dict[str, Any]:
     """Creates a new user with hashed password."""
-    if username in MOCK_USERS:
-        raise ValueError("Username already exists")
-
-    try:
-        # Hash the password
-        salt = bcrypt.gensalt()
-        hashed_password = bcrypt.hashpw(password.encode('utf-8'), salt)
-
-        # Create user record
-        user_id = len(MOCK_USERS) + 1
-        user = {
-            "id": user_id,
-            "username": username,
-            "password": hashed_password,
-            "created_at": datetime.now(timezone.utc)
-        }
-        
-        # Save to mock DB
-        MOCK_USERS[username] = user
-        
-        logger.info("Created new user: %s", username)
-        return {"username": username, "id": user_id}
-    
-    except Exception as e:
-        logger.error("Failed to create user: %s", str(e))
-        raise Exception(f"Failed to create user: {str(e)}") from e
+    # TODO: Implement user creation functionality
+    # 1. Check if username already exists in MOCK_USERS, raise ValueError if it does
+    # 2. Hash the password using bcrypt
+    # 3. Create a user record with id, username, hashed password, and creation timestamp
+    # 4. Add the user to MOCK_USERS dictionary
+    # 5. Log successful user creation
+    # 6. Return user info (username and id)
+    # 7. Handle exceptions appropriately
+    pass
 
 def verify_user(username: str, password: str) -> Dict[str, Any]:
     """Verifies user credentials."""
-    user = MOCK_USERS.get(username)
-    if not user:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="User not found"
-        )
-    
-    # Skip password check for guest user
-    if username == "guest":
-        return user
-        
-    if user["password"] != password:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Invalid password"
-        )
-    return user
+    # TODO: Implement user verification functionality
+    # 1. Check if username exists in MOCK_USERS, raise 401 if not found
+    # 2. For guest user, skip password check
+    # 3. For regular users, verify password matches
+    # 4. Return user data if credentials are valid
+    # 5. Raise 401 UNAUTHORIZED for invalid credentials
+    pass
 
 def create_access_token(data: Dict[str, Any]) -> str:
     """Creates JWT token with expiry."""
-    to_encode = data.copy()
-    expire = datetime.now(timezone.utc) + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
-    to_encode.update({"exp": expire})
-    return pyjwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+    # TODO: Implement token creation
+    # 1. Create a copy of the data dictionary
+    # 2. Calculate expiration time using ACCESS_TOKEN_EXPIRE_MINUTES
+    # 3. Add expiration to token data
+    # 4. Encode and return JWT token using SECRET_KEY and ALGORITHM
+    pass
 
 def verify_token(token: str) -> Dict[str, Any]:
     """Verifies JWT token and returns user data."""
-    try:
-        logger.debug(f"Attempting to verify token: {token[:10]}...")
-        try:
-            payload = pyjwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        except Exception as e:
-            logger.error(f"Token decode failed: {str(e)}")
-            raise
-
-        username = payload.get("sub")
-        logger.debug(f"Decoded token payload: {payload}")
-        logger.debug(f"Username from token: {username}")
-        
-        if username is None:
-            logger.warning("No username in token")
-            raise HTTPException(
-                status_code=status.HTTP_401_UNAUTHORIZED,
-                detail="Invalid token"
-            )
-        if username not in MOCK_USERS:
-            logger.warning(f"Username {username} not found in MOCK_USERS")
-            raise HTTPException(
-                status_code=status.HTTP_401_UNAUTHORIZED,
-                detail="Invalid token"
-            )
-        return MOCK_USERS[username]
-    except Exception as e:
-        logger.error(f"Token validation failed: {str(e)}")
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Could not validate token"
-        )
+    # TODO: Implement token verification
+    # 1. Try to decode the token using SECRET_KEY and ALGORITHM
+    # 2. Extract username ("sub") from payload
+    # 3. Validate that username exists and is in MOCK_USERS
+    # 4. Return user data if token is valid
+    # 5. Handle exceptions with appropriate HTTP errors
+    pass
 
 # def get_current_user(token: str) -> Dict[str, Any]:
 #     """Dependency for protected endpoints."""
