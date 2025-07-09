@@ -1,0 +1,52 @@
+name: Run Tests
+
+on:
+  push:
+    branches: 
+      - main
+      - master
+  pull_request:
+    branches: 
+      - main
+      - master
+
+jobs:
+  test:
+    name: Run Python Tests
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+          
+      - name: Install Python dependencies
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          if [ -f "requirements.txt" ]; then
+            pip install -r requirements.txt
+          fi
+          pip install pytest requests
+
+      - name: Run tests and process results
+        run: |
+          set -euo pipefail
+          # Make the script executable
+          chmod +x .github/workflows/process_test_results.py
+          
+          # Run the script to execute tests and upload results
+          python .github/workflows/process_test_results.py
+
+      - name: Notify completion
+        if: always()
+        run: |
+          echo "Test run completed."
